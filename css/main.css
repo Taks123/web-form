@@ -1,0 +1,7 @@
+body{
+  color:pink;
+}
+#emailError, #nameError, #ageError, #movieError, #genderError {
+      background-color: #c0392b;
+      color: white;
+    }
