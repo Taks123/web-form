@@ -1,4 +1,40 @@
-<div class="container">
+<form action="index.php" method="POST">
+
+<label for="name"> Full Name: <?= !empty($errors['name']) ? $errors['name'] : '' ?></label>
+  <input id="name" name="name" type="text" placeholder="Full Name" value="<?= !empty($name) ? $name : '' ?>"</br>
+
+<label for="email">Email: <?= !empty($errors['email']) ? $errors['email'] : '' ?></label>
+<input type="text" name="email" placeholder="Email" id="email" value="<?= !empty($email) ? $email : '' ?>"</br>
+
+<label for="address">Address:<?= !empty($errors['address']) ? $errors['address'] : '' ?></label>
+<input type="text" name="address" placeholder="Address" id="address" value="<?= !empty($address) ? $address : '' ?>"</br>
+
+<label for="dateofbirth">Date of Birth:<?= !empty($errors['dateofbirth']) ? $errors['dateofbirth'] : '' ?></label>
+<input type="date" name="dateofbirth" placeholder="Date of Birth" id="dateofbirth" value="<?= !empty($dateofbirth) ? $dateofbirth : '' ?>"</br>
+
+<label for="age">Age:<?= !empty($errors['age']) ? $errors['age'] : '' ?></label>
+<input type="text" name="age" placeholder="age" id="age" value="<?= !empty($age) ? $age : '' ?>"</br>
+
+<label for="Gender">Gender:<?= !empty($errors['gender']) ? $errors['gender'] : '' ?> </label>
+    <input type="radio" name="gender" value="male">Male
+    <input type="radio" name="gender" id="female">Female <input value="<?= !empty($gender) ? $gender : '' ?>"</br>
+
+    <label for="movie">Favourite Movie:<?= !empty($errors['movie']) ? $errors['movie'] : '' ?></label>
+<select id="movie" name="movie">
+<option value="-------">------</option>
+<option value="movie 1">movie 1</option>
+<option value="movie 2">movie 2</option>
+<option value="movie 3">movie 3</option>
+<input value="<?= !empty($movie) ? $movie : '' ?>"</br></select>
+
+<br>
+<input type="submit" value="Submit"><input type="reset" value="Reset">
+</form>
+
+
+
+
+<!-- <div class="container">
 <h2>Tell us some info!</h2>
   <form onsubmit="return validate()">
       <label for="name">Full name:</label>
@@ -46,3 +82,4 @@
     <button type="submit">Validate</button>
   </form>
 </div>
+ -->
