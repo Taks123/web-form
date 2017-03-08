@@ -1,34 +1,41 @@
 <form action="index.php" method="POST">
 
-<label for="name"> Full Name: <?= !empty($errors['name']) ? $errors['name'] : '' ?></label>
-  <input id="name" name="name" type="text" placeholder="Full Name" value="<?= !empty($name) ? $name : '' ?>"</br>
+  <label for="name"> Full Name: <?= !empty($errors['name']) ? $errors['name'] : '' ?></label>
+  <input id="name" name="name" type="text" placeholder="Full Name" value="<?= !empty($name) ? $name : '' ?>"></br>
 
-<label for="email">Email: <?= !empty($errors['email']) ? $errors['email'] : '' ?></label>
-<input type="text" name="email" placeholder="Email" id="email" value="<?= !empty($email) ? $email : '' ?>"</br>
+  <label for="email"> Email: <?= !empty($errors['email']) ? $errors['email'] : '' ?></label>
+  <input id="email" name="email" type="text" placeholder="Email" value="<?= !empty($email) ? $email : '' ?>"></br>
 
-<label for="address">Address:<?= !empty($errors['address']) ? $errors['address'] : '' ?></label>
-<input type="text" name="address" placeholder="Address" id="address" value="<?= !empty($address) ? $address : '' ?>"</br>
+  <label for="Address"> Address: <?= !empty($errors['address']) ? $errors['address'] : '' ?></label>
+  <input id="address" name="address" placeholder="Address" value="<?= !empty($address) ? $address : '' ?>"></br>
 
-<label for="dateofbirth">Date of Birth:<?= !empty($errors['dateofbirth']) ? $errors['dateofbirth'] : '' ?></label>
-<input type="date" name="dateofbirth" placeholder="Date of Birth" id="dateofbirth" value="<?= !empty($dateofbirth) ? $dateofbirth : '' ?>"</br>
+  <label for="dateofbirth">Date of Birth: <?= !empty($errors['dateofbirth']) ? $errors['dateofbirth'] : '' ?></label>
+  <input id="dateofbirth" name="dateofbirth" type="date" max="3/20/2017" placeholder="dd/mm/yyyy" value="<?= !empty($dateofbirth) ? $dateofbirth : '' ?>"></br>
 
-<label for="age">Age:<?= !empty($errors['age']) ? $errors['age'] : '' ?></label>
-<input type="text" name="age" placeholder="age" id="age" value="<?= !empty($age) ? $age : '' ?>"</br>
+  <label for>Age: <?= !empty($errors['age']) ? $errors['age'] : '' ?></label>
+  <input id="age" name="age" type="number" min="1" max="100" placeholder="Age" value="<?= !empty($age) ? $age : '' ?>"></br>
 
-<label for="Gender">Gender:<?= !empty($errors['gender']) ? $errors['gender'] : '' ?> </label>
-    <input type="radio" name="gender" value="male">Male
-    <input type="radio" name="gender" id="female">Female <input value="<?= !empty($gender) ? $gender : '' ?>"</br>
 
-    <label for="movie">Favourite Movie:<?= !empty($errors['movie']) ? $errors['movie'] : '' ?></label>
-<select id="movie" name="movie">
-<option value="-------">------</option>
-<option value="movie 1">movie 1</option>
-<option value="movie 2">movie 2</option>
-<option value="movie 3">movie 3</option>
-<input value="<?= !empty($movie) ? $movie : '' ?>"</br></select>
 
-<br>
-<input type="submit" value="Submit"><input type="reset" value="Reset">
+
+  <label for="gender">Gender: <?= !empty($errors['gender']) ? $errors['gender'] : '' ?></label>
+  <input type="radio" name="gender" value="male" <?php if (!empty($_POST['gender']) && $_POST['gender'] == 'male') echo 'checked="checked"'; ?>> Male
+  <input type="radio" name="gender" value="Female" <?php if (!empty($_POST['gender']) && $_POST['gender'] == 'female') echo 'checked="checked"'; ?>>Female </br>
+
+
+
+
+
+  <label for="movie">Favourite Movie: <?= !empty($errors['movie']) ? $errors['movie'] : '' ?></label>
+  <select id="movie" name="movie">
+    <option value="movie1" <?php if (!empty($_POST['movie']) && $_POST['movie'] == 'movie1') echo 'selected="selected"'; ?>>Select Movie</option>
+    <option value="movie2" <?php if (!empty($_POST['movie']) && $_POST['movie'] == 'movie2') echo 'selected="selected"'; ?>>Movie 1</option>
+    <option value="movie3" <?php if (!empty($_POST['movie']) && $_POST['movie'] == 'movie3') echo 'selected="selected"'; ?>>Movie 2</option>
+    <option value="movie4" <?php if (!empty($_POST['movie']) && $_POST['movie'] == 'movie4') echo 'selected="selected"'; ?>>Movie 3</option>
+  </select>
+</br>
+
+<input type="submit" value="Submit">  <input type="reset" value="Reset">
 </form>
 
 

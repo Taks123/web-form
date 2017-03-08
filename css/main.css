@@ -2,7 +2,7 @@ body{
   color:pink;
   background-color: black;
 }
-#emailError, #nameError, #ageError, #movieError, #genderError {
+#errors {
       background-color: #c0392b;
       color: white;
     }
