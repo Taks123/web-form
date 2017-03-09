@@ -16,7 +16,7 @@
   </br>
 
   <label for="dateofbirth">Date of Birth: <?= !empty($errors['dateofbirth']) ? $errors['dateofbirth'] : '' ?></label>
-  <input id="dateofbirth" name="dateofbirth" type="date" placeholder="dd/mm/yyyy" value="<?= !empty($dateofbirth) ? $dateofbirth : '' ?>"><div id="dateofbirthError"></div>
+  <input id="dateofbirth" name="dateofbirth" type="date" placeholder="mm/dd/yyyy" value="<?= !empty($dateofbirth) ? $dateofbirth : '' ?>"><div id="dateofbirthError"></div>
   </br>
 
   <label for>Age: <?= !empty($errors['age']) ? $errors['age'] : '' ?></label>
@@ -43,7 +43,7 @@
   <div id="movieError"></div>
 </br>
 
-<button id="submitForm" type="submit" onclick="return validate()">Submit </button>
+<button id="submitForm" type="submit" onclick="return validate()"> Submit </button>
 <button id="clearForm" type="reset" value="reset">Clear </button>
 </form>
 

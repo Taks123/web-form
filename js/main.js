@@ -56,19 +56,20 @@ function validateAddress(){
     return false;
   }
 }
-function validateDateofbirth(){
-var valueDate = document.getElementById('dateofbirth').value;
 
-if(!Date.parse(valueDate)){
- document.getElementById('dateofbirthError').innerHTML = "";
-    return true;
-  }
-  else
-  {
-    document.getElementById('dateofbirthError').innerHTML = dateofbirth + "Please enter Date Of Birth!";
-    return false;
-  }
-}
+// function validateDateofbirth(){
+// var valueDate = document.getElementById('dateofbirth').value;
+
+// if(!Date.parse(valueDate)){
+//  document.getElementById('dateofbirthError').innerHTML = "";
+//     return true;
+//   }
+//   else
+//   {
+//     document.getElementById('dateofbirthError').innerHTML = dateofbirth + "Please enter Date Of Birth!";
+//     return false;
+//   }
+// }
 
 
 function validateGender() {
@@ -99,4 +100,18 @@ else {
 
 
 
+// function validateAge(dateString) {
+//     var today = new Date();
+//     var birthDate = new Date(dateString);
+//     var age = today.getFullYear() - birthDate.getFullYear();
+//     var m = today.getMonth() - birthDate.getMonth();
+//     if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+//         age--;
+//     }
+//     return age;
+// }
 
+// function validateDateofbirth() {
+//   var dob = document.getElementById('dateofbirth');
+//   document.getElementById('ageOutput').innerHTML = "validateAge(dob.value)";
+// }
