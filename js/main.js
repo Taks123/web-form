@@ -12,15 +12,15 @@ function validate() {
 }
 
   function validateName() {
-         fullName= document.getElementsByName('name')[0].value;
-         if(fullName.length>2){
+         name= document.getElementsByName('name')[0].value;
+         if(name.length>2){
        // fullName + "is a valid name!";
-          document.getElementById('nameError').innerHTML=fullName + " " + " "
+          document.getElementById('nameError').innerHTML=name + " " + " "
           return true;
          }
         else{
          // fullName + "is not a valid name!";
-         document.getElementById('nameError').innerHTML=fullName + " " + "Please enter your name"
+         document.getElementById('nameError').innerHTML=name + " " + "Please enter your name"
          return false;
         }
        }
@@ -56,20 +56,21 @@ function validateAddress(){
     return false;
   }
 }
+function validateDateofbirth(){
+var valueDate = document.getElementById('dateofbirth').value;
+
+if(!Date.parse(valueDate)){
+ document.getElementById('dateofbirthError').innerHTML = "";
+    return true;
+  }
+  else
+  {
+    document.getElementById('dateofbirthError').innerHTML = dateofbirth + "Please enter Date Of Birth!";
+    return false;
+  }
+}
 
 
-
-// if (parseInt(age) && parseInt(age) >=0 && parseInt(age) <=150) {
-// // alert(fullName + " is a valid name!");
-// document.getElementById('ageError').innerHTML = age + " is a great age";
-// return true;
-// }
-// else
-// {
-// document.getElementById('ageError').innerHTML = age + " Please enter a valid age";
-// return false;
-// }
-// }
 function validateGender() {
     var radios = document.getElementsByName("gender");
     var formValid = document.getElementById('genderError').innerHTML = '';
@@ -88,11 +89,11 @@ function validateMovie(){
 movie = document.getElementById('movie').selectedIndex;
 if (movie == 0){
   document.getElementById('movieError').innerHTML = "Please choose a movie!";
-  return false
+  return false;
 }
 else {
   document.getElementById('movieError').innerHTML = "Good Choice!";
-  return true
+  return true;
 }
 }
 
