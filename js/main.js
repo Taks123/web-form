@@ -1,79 +1,101 @@
 function validate() {
-if (validateEmail() && validateName() && validateAddress() && validateDateOfBirth() && validateAge() && validateMovie() && validateGender()) {
-  return true;
+
+ validateName();
+   validateEmail();
+    validateAddress();
+    //  validateAge();
+     validateMovie();
+      validateGender();
+
+  return false;
+  document.getElementById('submitForm').submit();
 }
-return false;
-}
-   function validateName() {
+
+  function validateName() {
          fullName= document.getElementsByName('name')[0].value;
          if(fullName.length>2){
        // fullName + "is a valid name!";
-          document.getElementById('nameError').innerHTML=fullName + " " + "is a valid name"
+          document.getElementById('nameError').innerHTML=fullName + " " + " "
           return true;
          }
         else{
          // fullName + "is not a valid name!";
-         document.getElementById('nameError').innerHTML=fullName + " " + "is not a valid name"
+         document.getElementById('nameError').innerHTML=fullName + " " + "Please enter your name"
          return false;
         }
        }
+function validateEmail(){
 
-       function validateEmail(){
-   mailAddress = document.getElementById('email').value;
-         pos1 = mailAddress.indexOf("@");
-         pos2 = mailAddress.indexOf(".");
-        if (pos1 >= 0 && pos2 >= 0) {
-        document.getElementById('emailError').innerHTML=mailAddress + "This is a valid e-mail address!";
-             return true;
-         }
-         else {
-            document.getElementById('emailError').innerHTML=mailAddress + "This is NOT a valid e-mail address!"; return false;
-         }
- }
-      function validateAddress(){
-Address = document.getElementById('address').value;
-pos1 = Address.indexOf("");
- Address.length=>200;
-
-   document.getElementById('addressError').innerHTML=Address + "This is a valid address!";
-             return true;
-         }
-         else {
-            document.getElementById('addressError').innerHTML=Address + "This is NOT a valid address!"; return false;
-         }
- }
-// function validateAge (){
-
-
-function validateMovie(){
-  movie = document.getElementById('movie');
-  if (movie.selectedIndex == 0){
-    document.getElementById('movieError').innerHTML = "Please choose a movie!";
-    return false
+ mailAddress = document.getElementById('email').value;
+ pos1 = mailAddress.indexOf("@");
+ pos2 = mailAddress.indexOf(".");
+  if (pos1 >= 0 && pos2 >= 0) {
+// alert(mailAddress + "is a valid e-mail address!"); }
+  document.getElementById('emailError').innerHTML = mailAddress + " ";
+  return true;
   }
-// else {
-  // document.getElementById('movieError').innerHTML = "Good Choice!";
-  return true
+  else {
+  document.getElementById('emailError').innerHTML = mailAddress + "Please enter a valid e-mail address!";
+  return false;
+    }
 }
 
+function validateAddress(){
 
-function validateGender() {
-  var genderRadios = document.getElementsByName('gender');
-  var genderSelected = false;
+  address = document.getElementById('address').value;
+  pos1 = address.indexOf(' ');
 
+  if (pos1 >= 0 && address.length < 200) {
 
-  for (var i = 0; i < genderRadios.length; i++) {
-    if (genderRadios[i].checked === true){
-      genderSelected = true;
-    }
+    document.getElementById('addressError').innerHTML = "";
+    return true;
   }
-  var output = document.getElementById('genderError');
-  if (!genderSelected) {
-    output.innerHTML = "Please select a gender!";
+  else
+  {
+    document.getElementById('addressError').innerHTML = address + "Please enter a valid address!";
     return false;
   }
-  output.innerHTML = "";
-  return true;
 }
+
+
+
+// if (parseInt(age) && parseInt(age) >=0 && parseInt(age) <=150) {
+// // alert(fullName + " is a valid name!");
+// document.getElementById('ageError').innerHTML = age + " is a great age";
+// return true;
+// }
+// else
+// {
+// document.getElementById('ageError').innerHTML = age + " Please enter a valid age";
+// return false;
+// }
+// }
+function validateGender() {
+    var radios = document.getElementsByName("gender");
+    var formValid = document.getElementById('genderError').innerHTML = '';
+
+    var i = 0;
+    while (!formValid && i < radios.length) {
+        if (radios[i].checked) form= true;
+        i++;
+    }
+
+    if (!formValid) document.getElementById("genderError").innerHTML = 'Please select your gender';
+    return formValid;
+}
+
+function validateMovie(){
+movie = document.getElementById('movie').selectedIndex;
+if (movie == 0){
+  document.getElementById('movieError').innerHTML = "Please choose a movie!";
+  return false
+}
+else {
+  document.getElementById('movieError').innerHTML = "Good Choice!";
+  return true
+}
+}
+
+
 
 
