@@ -1,38 +1,52 @@
 <?php
 // All you functions will go inside this file
-function validateName ($name)
-if(empty($name)){
-  return "Name is required"
+function validateName($name) {
+  if (empty($name)) {
+    return "Name is required";
+  }
+  if (strlen($name) > 40 || !preg_match("/\s/", $name)) {
+    return "Please enter full name";
+  }
+  else {
+    return false;
+  }
 }
+
+function validateEmail($email) {
+  if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
+    return "Email is required";
+  }
 }
-function validateEmail ($email)
-if(empty($email)){
-  return "Email is required"
+
+function validateAddress($address) {
+  if(empty($address)) {
+    return "An address is required";
+  }
+  if (strlen($address) > 200 || !preg_match("/\s/", $address)) {
+    return "Please enter full name";
+  }
+  else {
+    return false;
+  }
 }
-}
-function validateAddress ($address)
-if(empty($address)){
-  return "Address is required"
-}
-}
-function validatedateofbirth ($dateofbirth)
+function validatedateofbirth ($dateofbirth){
 if(empty($dateofbirth)){
-  return "Date of Birth is required"
+  return "Date of Birth is required";
 }
 }
-function validateAge ($age)
+function validateAge ($age){
 if(empty($age)){
-  return "Age is required"
+  return "Age is required";
 }
 }
-function validateGender ($gender)
+function validateGender ($gender){
 if(empty($gender)){
-  return "Gender is required"
+  return "Gender is required";
 }
 }
-function validateMovie ($movie)
+function validateMovie ($movie){
 if(empty($movie)){
-  return "Favourite movie is required"
+  return "Favourite movie is required";
 }
 }
 

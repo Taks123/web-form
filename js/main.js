@@ -9,7 +9,7 @@ return false;
          pos1 = mailAddress.indexOf("@");
          pos2 = mailAddress.indexOf(".");
         if (pos1 >= 0 && pos2 >= 0) {
-        document.getElementById('emailError').innerHTML=mailAddress + "This is a valid e-mail address!";
+        document.getElementById('emailError').innerHTML=mailAddress + "";
              return true;
          }
          else {
@@ -20,7 +20,7 @@ return false;
          fullName= document.getElementsByName('name')[0].value;
          if(fullName.length>2){
        // fullName + "is a valid name!";
-          document.getElementById('nameError').innerHTML=fullName + " " + "is a valid name"
+          document.getElementById('nameError').innerHTML=fullName + " " + ""
           return true;
          }
         else{
