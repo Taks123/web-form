@@ -1,20 +1,32 @@
 <?php
 //ALL your functions will go inside here
 function validateName($name) {
-  if(empty($name)) {
+  if (empty($name)) {
     return "Name is required";
+  }
+  if (strlen($name) > 40 || !preg_match("/\s/", $name)) {
+    return "Please enter full name";
+  }
+  else {
+    return false;
   }
 }
 
 function validateEmail($email) {
-  if(empty($email)) {
-    return "An email is required";
+  if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
+    return "Email is required";
   }
 }
 
 function validateAddress($address) {
   if(empty($address)) {
     return "An address is required";
+  }
+  if (strlen($address) > 200 || !preg_match("/\s/", $address)) {
+    return "Please enter full name";
+  }
+  else {
+    return false;
   }
 }
 
@@ -30,17 +42,19 @@ function validateDateOfBirth($dateofbirth) {
   }
 }
 
+function validateGender($gender) {
+  if(empty($gender)) {
+    return "Please select a gender";
+  }
+}
+
 function validateMovie($movie) {
   if($movie == 'movie1') {
     return "Please select a movie";
   }
 }
 
-function validateGender($gender) {
-  if(empty($gender)) {
-    return "Please select a gender";
-  }
-}
+
 
 
 function dd($data)
