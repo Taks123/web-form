@@ -36,8 +36,8 @@ function validateAge($age) {
   }
 }
 
-function validateDateOfBirth($dateofbirth) {
-  if(empty($dateofbirth)) {
+function validateDob($dob) {
+  if(empty($dob)) {
     return "Date of Birth is required";
   }
 }

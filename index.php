@@ -6,27 +6,26 @@ require 'includes/functions.php';
 $name = $address = $email = $age = $dateofbirth = $movie = $gender = '';
 $errors = [];
 
-// if ($_SERVER['REQUEST_METHOD'] === 'POST'){
+if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 
-// //Add data from form
-//   $name = $_POST['name'];
-//   $email = $_POST['email'];
-//   $address = $_POST['address'];
-//  $dateofbirth = $_POST['dateofbirth'];
-//  $age = $_POST['age'];
-//     $movie = $_POST['movie'];
-//   $gender = !empty($_POST['gender']) ? $_POST['gender'] : '';
+//Add data from form
+  $name = $_POST['name'];
+  $email = $_POST['email'];
+  $address = $_POST['address'];
+ $dob = $_POST['dob'];
+ $age = $_POST['age'];
+    $movie = $_POST['movie'];
+  $gender = !empty($_POST['gender']) ? $_POST['gender'] : '';
 
 
-//   $errors['name'] = validateName($name);
-//   $errors['email'] = validateEmail($email);
-//   $errors['address'] = validateAddress($address);
-//    $errors['dateofbirth'] = validateDateofBirth($dateofbirth);
-//    $errors['age'] = validateAge($age);
-
-//   $errors['movie'] = validateMovie($movie);
-//   $errors['gender'] = validateGender($gender);
-// }
+  $errors['name'] = validateName($name);
+  $errors['email'] = validateEmail($email);
+  $errors['address'] = validateAddress($address);
+   $errors['dob'] = validateDob($dob);
+   $errors['age'] = validateAge($age);
+$errors['movie'] = validateMovie($movie);
+  $errors['gender'] = validateGender($gender);
+}
 
 require 'partials/header.php';
 require 'partials/form.php';

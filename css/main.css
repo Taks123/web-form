@@ -1,3 +1,29 @@
-#nameError, #emailaddress, #addressError, #dateError, #ageError, #genderError, #movieError{
+body{
+padding-right:25%;
+padding-top: 8%;
+padding-left: 25%;
+}
+#nameError, #emailError, #addressError, #dobError, #ageError, #genderError, #movieError{
 color: red;
 }
+
+.form{
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

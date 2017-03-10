@@ -1,14 +1,19 @@
 function validate() {
 
- validateName();
-   validateEmail();
-    validateAddress();
-    //  validateAge();
-     validateMovie();
-      validateGender();
+ var nameError = validateName();
+  var emailError = validateEmail();
+  var addressError = validateAddress();
+  var ageError = getAge();
+  var dobError = validateDob();
+  var genderError = validateGender();
+  var movieError = validateMovie();
 
+  if (!nameError && !emailError && !addressError &&  !ageError && !dobError && !genderError && !movieError)
+  {
   return false;
+}
   document.getElementById('submitForm').submit();
+  return true;
 }
 
   function validateName() {
@@ -24,9 +29,9 @@ function validate() {
          return false;
         }
        }
-function validateEmail(){
 
- mailAddress = document.getElementById('email').value;
+function validateEmail(){
+mailAddress = document.getElementById('email').value;
  pos1 = mailAddress.indexOf("@");
  pos2 = mailAddress.indexOf(".");
   if (pos1 >= 0 && pos2 >= 0) {
@@ -57,19 +62,42 @@ function validateAddress(){
   }
 }
 
-// function validateDateofbirth(){
-// var valueDate = document.getElementById('dateofbirth').value;
+function validateDob(){
+  var dob = document.getElementById('dob');
+  var calculatedAge = getAge(dob.value);
+  var dob = document.getElementById('age').value;
+  if (calculatedAge != dob || parseInt(dob) >= 150 || parseInt(dob) < 0){
+    document.getElementById("ageError").innerHTML = "Please enter a valid age";
+    return false;
+  }
+  else
+  {
+    document.getElementById("ageError").innerHTML = "";
+    return true;
+  }
+}
 
-// if(!Date.parse(valueDate)){
-//  document.getElementById('dateofbirthError').innerHTML = "";
-//     return true;
-//   }
-//   else
-//   {
-//     document.getElementById('dateofbirthError').innerHTML = dateofbirth + "Please enter Date Of Birth!";
-//     return false;
-//   }
-// }
+
+function getAge(dob) {
+  var today = new Date();
+  var birthDate = new Date(dob);
+  var age = today.getFullYear() - birthDate.getFullYear();
+  var m = today.getMonth() - birthDate.getMonth();
+  if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+    age--;
+  }
+  return age;
+}
+
+
+function calculateAge(dob) {
+  var dob = document.getElementById('dob');
+  var calculatedAge = getAge(dob.value);
+  document.getElementById('age').value = calculatedAge;
+}
+
+
+
 
 
 function validateGender() {
@@ -100,18 +128,5 @@ else {
 
 
 
-// function validateAge(dateString) {
-//     var today = new Date();
-//     var birthDate = new Date(dateString);
-//     var age = today.getFullYear() - birthDate.getFullYear();
-//     var m = today.getMonth() - birthDate.getMonth();
-//     if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-//         age--;
-//     }
-//     return age;
-// }
 
-// function validateDateofbirth() {
-//   var dob = document.getElementById('dateofbirth');
-//   document.getElementById('ageOutput').innerHTML = "validateAge(dob.value)";
-// }
+

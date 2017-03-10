@@ -1,3 +1,4 @@
+<div class="form">
 <form action="index.php" method="POST">
 
   <label for="name"> Full Name: <?= !empty($errors['name']) ? $errors['name'] : '' ?></label>
@@ -15,12 +16,14 @@
   <div id="addressError"></div>
   </br>
 
-  <label for="dateofbirth">Date of Birth: <?= !empty($errors['dateofbirth']) ? $errors['dateofbirth'] : '' ?></label>
-  <input id="dateofbirth" name="dateofbirth" type="date" placeholder="mm/dd/yyyy" value="<?= !empty($dateofbirth) ? $dateofbirth : '' ?>"><div id="dateofbirthError"></div>
-  </br>
+  <label for="dob">Date of Birth: <?= !empty($errors['dob']) ? $errors['dob'] : '' ?></label>
+  <input id="dob" name="dob" type="date" placeholder="mm/dd/yyyy"onchange="calculateAge()" value="<?= !empty($dob) ? $dob : '' ?>">
+<!-- <div id="dobError"></div> -->
+</br>
+</br>
 
-  <label for>Age: <?= !empty($errors['age']) ? $errors['age'] : '' ?></label>
-  <input id="age" name="age" type="number" placeholder="Age" value="<?= !empty($age) ? $age : '' ?>"> <div id="ageError"> </div> </br>
+  <label for="age"> Age: <?= !empty($errors['age']) ? $errors['age'] : '' ?></label>
+  <input id="age" name="age" type="number" min="1" max="150" placeholder="Age" value="<?= !empty($age) ? $age : '' ?>"> <div id="ageError"></div> </br>
 
 
 
@@ -46,7 +49,7 @@
 <button id="submitForm" type="submit" onclick="return validate()"> Submit </button>
 <button id="clearForm" type="reset" value="reset">Clear </button>
 </form>
-
+</div>
 
 
 
