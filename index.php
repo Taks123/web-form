@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
   $address = $_POST['address'];
  $dob = $_POST['dob'];
  $age = $_POST['age'];
-    $movie = $_POST['movie'];
+ $movie = $_POST['movie'];
   $gender = !empty($_POST['gender']) ? $_POST['gender'] : '';
 
 

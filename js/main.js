@@ -12,7 +12,6 @@ function validate() {
   {
   return false;
 }
-  document.getElementById('submitForm').submit();
   return true;
 }
 
@@ -20,12 +19,12 @@ function validate() {
          name= document.getElementsByName('name')[0].value;
          if(name.length>2){
        // fullName + "is a valid name!";
-          document.getElementById('nameError').innerHTML=name + " " + " "
+          document.getElementById('nameError').innerHTML=name + " " + " " ;
           return true;
          }
         else{
          // fullName + "is not a valid name!";
-         document.getElementById('nameError').innerHTML=name + " " + "Please enter your name"
+         document.getElementById('nameError').innerHTML=name + " " + "Please enter your name";
          return false;
         }
        }
@@ -35,7 +34,6 @@ mailAddress = document.getElementById('email').value;
  pos1 = mailAddress.indexOf("@");
  pos2 = mailAddress.indexOf(".");
   if (pos1 >= 0 && pos2 >= 0) {
-// alert(mailAddress + "is a valid e-mail address!"); }
   document.getElementById('emailError').innerHTML = mailAddress + " ";
   return true;
   }
@@ -46,7 +44,6 @@ mailAddress = document.getElementById('email').value;
 }
 
 function validateAddress(){
-
   address = document.getElementById('address').value;
   pos1 = address.indexOf(' ');
 
@@ -65,7 +62,7 @@ function validateAddress(){
 function validateDob(){
   var dob = document.getElementById('dob');
   var calculatedAge = getAge(dob.value);
-  var dob = document.getElementById('age').value;
+  document.getElementById('age').value;
   if (calculatedAge != dob || parseInt(dob) >= 150 || parseInt(dob) < 0){
     document.getElementById("ageError").innerHTML = "Please enter a valid age";
     return false;
@@ -90,8 +87,8 @@ function getAge(dob) {
 }
 
 
-function calculateAge(dob) {
-  var dob = document.getElementById('dob');
+function calculateAge() {
+   var dob = document.getElementById('dob');
   var calculatedAge = getAge(dob.value);
   document.getElementById('age').value = calculatedAge;
 }
@@ -116,7 +113,7 @@ function validateGender() {
 
 function validateMovie(){
 movie = document.getElementById('movie').selectedIndex;
-if (movie == 0){
+if (movie === 0){
   document.getElementById('movieError').innerHTML = "Please choose a movie!";
   return false;
 }
@@ -125,8 +122,3 @@ else {
   return true;
 }
 }
-
-
-
-
-

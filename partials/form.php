@@ -17,10 +17,10 @@
   </br>
 
   <label for="dob">Date of Birth: <?= !empty($errors['dob']) ? $errors['dob'] : '' ?></label>
-  <input id="dob" name="dob" type="date" placeholder="mm/dd/yyyy"onchange="calculateAge()" value="<?= !empty($dob) ? $dob : '' ?>">
-<!-- <div id="dobError"></div> -->
+  <input id="dob" name="dob" type="date" placeholder="mm/dd/yyyy"onchange="calculateAge(dob)" value=""<?= !empty($dob) ? $dob : '' ?>">
+<div id="dobError"></div>
 </br>
-</br>
+
 
   <label for="age"> Age: <?= !empty($errors['age']) ? $errors['age'] : '' ?></label>
   <input id="age" name="age" type="number" min="1" max="150" placeholder="Age" value="<?= !empty($age) ? $age : '' ?>"> <div id="ageError"></div> </br>
