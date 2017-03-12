@@ -93,23 +93,18 @@ function calculateAge() {
   document.getElementById('age').value = calculatedAge;
 }
 
-
-
-
-
 function validateGender() {
-    var radios = document.getElementsByName("gender");
-    var formValid = document.getElementById('genderError').innerHTML = '';
+//     if(document.getElementById('gender_Male').checked) {
 
-    var i = 0;
-    while (!formValid && i < radios.length) {
-        if (radios[i].checked) form= true;
-        i++;
-    }
+// }
+// else if(document.getElementById('gender_Female').checked) {
 
-    if (!formValid) document.getElementById("genderError").innerHTML = 'Please select your gender';
-    return formValid;
-}
+// }
+//  return ($('input[type=radio]:checked').size() > 0);
+//     }
+
+
+
 
 function validateMovie(){
 movie = document.getElementById('movie').selectedIndex;
