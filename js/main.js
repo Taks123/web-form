@@ -57,32 +57,65 @@ function validateAddress(){
     document.getElementById('addressError').innerHTML = address + "Please enter a valid address!";
     return false;
   }
-// else {
-  // document.getElementById('movieError').innerHTML = "Good Choice!";
-  return true
 }
 
-
-function validateGender() {
-  var genderRadios = document.getElementsByName('gender');
-  var genderSelected = false;
-
-
-  for (var i = 0; i < genderRadios.length; i++) {
-    if (genderRadios[i].checked === true){
-      genderSelected = true;
-    }
-  }
-  var output = document.getElementById('genderError');
-  if (!genderSelected) {
-    output.innerHTML = "Please select a gender!";
+function validateDob(){
+  var dob = document.getElementById('dob');
+  var calculatedAge = getAge(dob.value);
+  document.getElementById('age').value;
+  if (calculatedAge != dob || parseInt(dob) >= 150 || parseInt(dob) < 0){
+    document.getElementById("ageError").innerHTML = "Please enter a valid age";
     return false;
   }
-  output.innerHTML = "";
-  return true;
+  else
+  {
+    document.getElementById("ageError").innerHTML = "";
+    return true;
+  }
 }
 
 
+function getAge(dob) {
+  var today = new Date();
+  var birthDate = new Date(dob);
+  var age = today.getFullYear() - birthDate.getFullYear();
+  var m = today.getMonth() - birthDate.getMonth();
+  if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+    age--;
+  }
+  return age;
+}
+
+
+function calculateAge() {
+   var dob = document.getElementById('dob');
+  var calculatedAge = getAge(dob.value);
+  document.getElementById('age').value = calculatedAge;
+}
+
+function validateGender() {
+  // var radios = document.getElementsByName("gender");
+  // var formValid = false;
+  // document.getElementById('genderError').innerHTML = '';
+
+  // var i = 0;
+  // while (!formValid && i < radios.length) {
+  //   if (radios[i].checked) formValid = true;
+  //   i++;
+  // }
+
+  // if (!formValid) document.getElementById("genderError").innerHTML = 'Please choose an answer!';
+  // return formValid;
+}
+
+    if(document.getElementById('gender_Male').checked) {
+
+}
+else if(document.getElementById('gender_Female').checked) {
+
+}
+ return ($('input[type=radio]:checked').size() > 0);
+    }
 
 
 
