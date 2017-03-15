@@ -12,9 +12,9 @@
   </br>
 
   <label for="address"> Address: <?= !empty($errors['address']) ? $errors['address'] : '' ?></label>
- <textarea input id="address" name="address" placeholder="Address" value="<?= !empty($address) ? $address : '' ?>"></textarea>
-  </br></br>
-  <div id="addressError"></div> 
+  <input id="address" name="address" placeholder="Address" value="<?= !empty($address) ? $address : '' ?>"></br>
+  <div id="addressError"></div>
+  </br>
 
   <label for="dob">Date of Birth: <?= !empty($errors['dob']) ? $errors['dob'] : '' ?></label>
   <input id="dob" name="dob" type="date" placeholder="mm/dd/yyyy"onchange="calculateAge(dob)" value=""<?= !empty($dob) ? $dob : '' ?>">

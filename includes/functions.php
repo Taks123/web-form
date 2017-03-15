@@ -2,7 +2,7 @@
 //ALL your functions will go inside here
 function validateName($name) {
   if (empty($name)) {
-    return "Full name is required";
+    return "Name is required";
   }
   if (strlen($name) > 40 || !preg_match("/\s/", $name)) {
     return "Please enter full name";

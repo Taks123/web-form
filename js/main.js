@@ -93,29 +93,16 @@ function calculateAge() {
   document.getElementById('age').value = calculatedAge;
 }
 
-// function validateGender() {
-// //     if(document.getElementById('gender_Male').checked) {
-
-// // }
-// // else if(document.getElementById('gender_Female').checked) {
-
-// // }
-// //  return ($('input[type=radio]:checked').size() > 0);
-// //     }
 function validateGender() {
-  var radios = document.getElementsByName("gender");
-  var formValid = false;
-  document.getElementById('genderError').innerHTML = '';
+//     if(document.getElementById('gender_Male').checked) {
 
-  var i = 0;
-  while (!formValid && i < radios.length) {
-    if (radios[i].checked) formValid = true;
-    i++;
-  }
+// }
+// else if(document.getElementById('gender_Female').checked) {
 
-  if (!formValid) document.getElementById("genderError").innerHTML = 'Please choose an answer!';
-  return formValid;
-}
+// }
+//  return ($('input[type=radio]:checked').size() > 0);
+//     }
+
 
 
 
