@@ -1,4 +1,3 @@
-
 <?php
 
 require 'includes/functions.php';
@@ -10,22 +9,22 @@ $errors = [];
 if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 
 //Add data from form
-  $name = $_POST['name'];
-  $email = $_POST['email'];
-  $address = $_POST['address'];
- $dob = $_POST['dob'];
- $age = $_POST['age'];
- $movie = $_POST['movie'];
-  $gender = !empty($_POST['gender']) ? $_POST['gender'] : '';
+$name = $_POST['name'];
+$email = $_POST['email'];
+$address = $_POST['address'];
+$dob = $_POST['dob'];
+$age = $_POST['age'];
+$movie = $_POST['movie'];
+$gender = !empty($_POST['gender']) ? $_POST['gender'] : '';
 
 
-  $errors['name'] = validateName($name);
-  $errors['email'] = validateEmail($email);
-  $errors['address'] = validateAddress($address);
-   $errors['dob'] = validateDob($dob);
-   $errors['age'] = validateAge($age);
+$errors['name'] = validateName($name);
+$errors['email'] = validateEmail($email);
+$errors['address'] = validateAddress($address);
+$errors['dob'] = validateDob($dob);
+$errors['age'] = validateAge($age);
 $errors['movie'] = validateMovie($movie);
-  $errors['gender'] = validateGender($gender);
+$errors['gender'] = validateGender($gender);
 }
 
 require 'partials/header.php';

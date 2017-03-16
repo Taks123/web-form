@@ -37,17 +37,16 @@
   </br>
 
 
-
-
 <label for="movie">Favourite Movie: <?= !empty($errors['movie']) ? $errors['movie'] : '' ?></label>
   <select id="movie" name="movie">
     <option value="movie1" <?php if (!empty($_POST['movie']) && $_POST['movie'] == 'movie1') echo 'selected="selected"'; ?>>Select Movie</option>
-    <option value="movie2" <?php if (!empty($_POST['movie']) && $_POST['movie'] == 'movie2') echo 'selected="selected"'; ?>>Movie 1</option>
-    <option value="movie3" <?php if (!empty($_POST['movie']) && $_POST['movie'] == 'movie3') echo 'selected="selected"'; ?>>Movie 2</option>
-    <option value="movie4" <?php if (!empty($_POST['movie']) && $_POST['movie'] == 'movie4') echo 'selected="selected"'; ?>>Movie 3</option>
+    <option value="The Conjuring" <?php if (!empty($_POST['movie']) && $_POST['movie'] == 'The Conjuring') echo 'selected="selected"'; ?>>The Conjuring</option>
+    <option value="The Notebook" <?php if (!empty($_POST['movie']) && $_POST['movie'] == 'The Notebook') echo 'selected="selected"'; ?>>The Notebook</option>
+    <option value="Max" <?php if (!empty($_POST['movie']) && $_POST['movie'] == 'Max') echo 'selected="selected"'; ?>>Max</option>
   </select>
   <div id="movieError"></div>
 </br>
+
 
 <button id="submitForm" type="submit"> Submit </button>
 <button id="clearForm" type="reset" value="reset">Clear </button>

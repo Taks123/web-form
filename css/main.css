@@ -1,8 +1,7 @@
 body{
-padding-right:25%;
-padding-top: 8%;
-padding-left: 25%;
-
+padding-right:50%;
+padding-top:8%;
+padding-left:25%;
 }
 #nameError, #emailError, #addressError, #dobError, #ageError, #genderError, #movieError{
 color: red;
