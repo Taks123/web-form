@@ -8,11 +8,11 @@ function validate() {
   var genderError = validateGender();
   var movieError = validateMovie();
 
-if (!nameError && !emailError && !addressError &&  !ageError && !dobError && !genderError && !movieError)
+if (nameError && emailError && addressError &&  ageError && dobError && genderError && movieError)
     {
-    return false;
-  }
     return true;
+  }
+    return false;
   }
 
 
@@ -33,7 +33,7 @@ mailAddress = document.getElementById("email").value;
  pos1 = mailAddress.indexOf("@");
  pos2 = mailAddress.indexOf(".");
   if (pos1 >= 0 && pos2 >= 0) {
-  document.getElementById("emailError").innerHTML = mailAddress + " ";
+    document.getElementById("emailError").innerHTML = "";
   return true;
   }
   else {
@@ -69,8 +69,7 @@ function validateDob(){
     document.getElementById("ageError").innerHTML = "[JS] Please enter a valid age";
     return false;
   }
-  else
-  {
+  else{
     document.getElementById("ageError").innerHTML = "";
     return true;
   }
@@ -113,6 +112,7 @@ if (gender === 0){
   return false;
 }
 else {
+   document.getElementById("genderError").innerHTML ="";
   return true;
 }
 }
@@ -125,6 +125,7 @@ if (movie === 0){
   return false;
 }
 else {
+   document.getElementById("movieError").innerHTML ="";
   return true;
 }
 }
