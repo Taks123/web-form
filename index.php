@@ -1,9 +1,10 @@
+
 <?php
 
 require 'includes/functions.php';
 
 //define variables and set to empty values
-$name = $address = $email = $age = $dateofbirth = $movie = $gender = '';
+$name = $address = $email = $age = $dob = $movie = $gender = '';
 $errors = [];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST'){

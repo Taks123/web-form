@@ -3,6 +3,7 @@
 <br>
 <br>
 <br>
-<p> © Copyright Takara Rodrigues 2017 </p>
+<div id="footer">
+<p> © Copyright Takara Rodrigues 2017 </p> </div>
 </body>
 </html>
