@@ -1,5 +1,5 @@
 <div class="form">
-<form action="index.php" method="POST">
+<form action="index.php" method="POST" onsubmit="return validate()">
 
   <label for="name"> Full Name: <?= !empty($errors['name']) ? $errors['name'] : '' ?></label>
   <input id="name" name="name" type="text" placeholder="Full Name" value="<?= !empty($name) ? $name : '' ?>">
@@ -8,11 +8,11 @@
 
   <label for="email"> Email: <?= !empty($errors['email']) ? $errors['email'] : '' ?></label>
   <input id="email" name="email" type="text" placeholder="Email" value="<?= !empty($email) ? $email : '' ?>">
-  <div id="emailError"></div>
+  <div id="emailError"> </div>
   </br>
 
   <label for="address"> Address: <?= !empty($errors['address']) ? $errors['address'] : '' ?></label>
-  <input id="address" name="address" placeholder="Address" value="<?= !empty($address) ? $address : '' ?>"></br>
+  <textarea input id="address" name="address" placeholder="Address"><?= !empty($address) ? $address : '' ?></textarea>
   <div id="addressError"></div>
   </br>
 
@@ -28,8 +28,11 @@
 
 
   <label for="gender">Gender: <?= !empty($errors['gender']) ? $errors['gender'] : '' ?></label>
-  <input type="radio" name="gender" value="male" <?php if (!empty($_POST['gender']) && $_POST['gender'] == 'male') echo 'checked="checked"'; ?>> Male
-  <input type="radio" name="gender" value="Female" <?php if (!empty($_POST['gender']) && $_POST['gender'] == 'female') echo 'checked="checked"'; ?>>Female </br>
+  <select id="gender" name="gender">
+   <option value="select gender" <?php if (!empty($_POST['gender']) && $_POST['gender'] == 'select gender') echo 'selected="selected"'; ?>>Select gender</option>
+  <option value="male" <?php if (!empty($_POST['gender']) && $_POST['gender'] == 'male') echo 'selected="selected"'; ?>> Male </option>
+  <option value="female" <?php if (!empty($_POST['gender']) && $_POST['gender'] == 'female') echo ' selected="selected"'; ?>> Female </option>
+  </select>
   <div id="genderError"></div>
   </br>
 
@@ -46,7 +49,7 @@
   <div id="movieError"></div>
 </br>
 
-<button id="submitForm" type="submit" onclick="return validate()"> Submit </button>
+<button id="submitForm" type="submit"> Submit </button>
 <button id="clearForm" type="reset" value="reset">Clear </button>
 </form>
 </div>
