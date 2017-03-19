@@ -1,8 +1,8 @@
 <div class="form">
 <form action="index.php" method="POST" onsubmit="return validate()">
 
-  <label for="name"> Full Name: <?= !empty($errors['name']) ? $errors['name'] : '' ?></label>
-  <input id="name" name="name" type="text" placeholder="Full Name" value="<?= !empty($name) ? $name : '' ?>">
+  <label for="name"> Full Name: <?= !empty($errors['name']) ? $errors['name'] : "" ?></label>
+  <input id="name" name="name" type="text" placeholder="Full Name" value="<?= !empty($name) ? $name : "" ?>">
   <div id="nameError"></div>
   </br>
 

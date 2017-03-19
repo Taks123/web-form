@@ -2,10 +2,13 @@
 //ALL your functions will go inside here
 function validateName($name) {
   if (empty($name)) {
-    return "Name is required";
+    return "Full Name is required";
   }
-  if (strlen($name) > 40 || !preg_match("/\s/", $name)) {
+  if (strlen($name) > 40|| !preg_match("/\s/", $name)) {
    return "Please enter full name";
+  }
+  if (!preg_match("/^ [a-zA-Z]*$/", $name)) {
+    return "How do you pronounce that! Please enter a valid name.";
   }
   else {
     return false;
