@@ -2,12 +2,12 @@
 <form action="index.php" method="POST" onsubmit="return validate()">
 
   <label for="name"> Full Name: <?= !empty($errors['name']) ? $errors['name'] : "" ?></label>
-  <input id="name" name="name" type="text" placeholder="Full Name" value="<?= !empty($name) ? $name : "" ?>">
+  <input id="name" name="name" type="text" placeholder="Full Name" value="<?= !empty($name) ? $name : ''?>">
   <div id="nameError"></div>
   </br>
 
   <label for="email"> Email: <?= !empty($errors['email']) ? $errors['email'] : "" ?></label>
-  <input id="email" name="email" type="text" placeholder="Email" value="<?= !empty($email) ? $email : "" ?>">
+  <input id="email" name="email" type="text" placeholder="Email" value="<?= !empty($email) ? $email : '' ?>">
   <div id="emailError"> </div>
   </br>
 
@@ -17,7 +17,7 @@
   </br>
 
   <label for="dob">Date of Birth: <?= !empty($errors['dob']) ? $errors['dob'] : '' ?></label>
-  <input id="dob" name="dob" type="date" placeholder="mm/dd/yyyy"onchange="calculateAge(dob)" value=""<?= !empty($dob) ? $dob : '' ?>">
+  <input id="dob" name="dob" type="date" onchange="calculateAge(dob)" value="<?= !empty($dob) ? $dob : '' ?>">
 <div id="dobError"></div>
 </br>
 
