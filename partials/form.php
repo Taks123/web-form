@@ -6,8 +6,8 @@
   <div id="nameError"></div>
   </br>
 
-  <label for="email"> Email: <?= !empty($errors['email']) ? $errors['email'] : '' ?></label>
-  <input id="email" name="email" type="text" placeholder="Email" value="<?= !empty($email) ? $email : '' ?>">
+  <label for="email"> Email: <?= !empty($errors['email']) ? $errors['email'] : "" ?></label>
+  <input id="email" name="email" type="text" placeholder="Email" value="<?= !empty($email) ? $email : "" ?>">
   <div id="emailError"> </div>
   </br>
 
