@@ -18,7 +18,13 @@ function validateEmail($email) {
   if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
     return "Email is required";
   }
+  if ( strlen($email) > 100 || !preg_match("/\s/", $name)) {
+return "Email address too long.";
 }
+ else { return false;
+ }
+}
+
 function validateAddress($address) {
   if(empty($address)) {
     return "An address is required";
