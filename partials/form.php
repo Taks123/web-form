@@ -1,6 +1,7 @@
-<div class="form">
-<form action="index.php" method="POST" onsubmit="return validate()">
+<div id="form">
 
+<form action="index.php" method="POST" onsubmit="return validate()">
+</br>
   <label for="name"> Full Name: <?= !empty($errors['name']) ? $errors['name'] : "" ?></label>
   <input id="name" name="name" type="text" placeholder="Full Name" value="<?= !empty($name) ? $name : ''?>">
   <div id="nameError"></div>
@@ -11,7 +12,7 @@
   <div id="emailError"> </div>
   </br>
 
-  <label for="address"> Address: <?= !empty($errors['address']) ? $errors['address'] : '' ?></label>
+ <label for="address"> Address: <?= !empty($errors['address']) ? $errors['address'] : '' ?></label>
   <textarea input id="address" name="address" placeholder="Address"><?= !empty($address) ? $address : '' ?></textarea>
   <div id="addressError"></div>
   </br>
@@ -35,9 +36,7 @@
   </select>
   <div id="genderError"></div>
   </br>
-
-
-<label for="movie">Favourite Movie: <?= !empty($errors['movie']) ? $errors['movie'] : '' ?></label>
+ <label for="movie">Favourite Movie: <?= !empty($errors['movie']) ? $errors['movie'] : '' ?></label>
   <select id="movie" name="movie">
     <option value="movie1" <?php if (!empty($_POST['movie']) && $_POST['movie'] == 'movie1') echo 'selected="selected"'; ?>>Select Movie</option>
     <option value="The Conjuring" <?php if (!empty($_POST['movie']) && $_POST['movie'] == 'The Conjuring') echo 'selected="selected"'; ?>>The Conjuring</option>
@@ -48,8 +47,8 @@
 </br>
 
 
-<button id="submitForm" type="submit"> Submit </button>
-<button id="clearForm" type="reset" value="reset">Clear </button>
+ <button id="submitForm"  class="btn btn-success" type="submit" a href="thanks.php"> Submit </button>
+<button id="clearForm" class="btn btn-warning" type="reset" value="reset">Clear </button>
 </form>
 </div>
 

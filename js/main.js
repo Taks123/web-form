@@ -21,11 +21,20 @@ name = document.getElementById('name').value;
  pos1 = name.indexOf(" ");
  pos2 = name.indexOf("@");
  pos3 = name.indexOf(".");
-if (pos1 >= 0 && pos2 < 0 && pos3 < 0 && name.length > 2 && ! parseInt(name)) {
-document.getElementById('nameError').innerHTML = "";
+if (pos1 >= 0 && pos2 < 0 && pos3 < 0 && ! parseInt(name)) {
+document.getElementById('nameError').innerHTML = "";  
 return true;
 }
- else{
+  else if(name.length <= 2){
+    document.getElementById("nameError").innerHTML = "[JS] You name is too short!";
+    return false;
+
+  }
+  else if(name.length >= 40){
+    document.getElementById("nameError").innerHTML = "[JS] You name is too long!";
+    return false;
+}
+ else {
          document.getElementById("nameError").innerHTML="[JS] Please enter your full name";
          return false;
         }
@@ -34,10 +43,10 @@ return true;
 
 
 function validateEmail(){
-mailAddress = document.getElementById("email").value;
- pos1 = mailAddress.indexOf("@");
- pos2 = mailAddress.indexOf(".");
-  if (pos1 >= 0 && pos2 >= 0) {
+email = document.getElementById("email").value;
+ pos1 = email.indexOf("@");
+ pos2 = email.indexOf(".");
+  if (pos1 >= 0 && pos2 >= 0 && email.length <= 100) {
     document.getElementById("emailError").innerHTML = "";
   return true;
   }
@@ -69,7 +78,7 @@ function validateAddress(){
 function validateDob(){
   var dob = document.getElementById("dob").value;
   var calculatedAge = getAge(dob);
-  var age= document.getElementById("age").value; console.log(age); console.log(dob); console.log(calculatedAge);
+  var age= document.getElementById("age").value;
   if (calculatedAge != age || parseInt(age) >= 150 || parseInt(age) < 0){
     document.getElementById("ageError").innerHTML = "[JS] Please enter a valid age";
     document.getElementById("dobError").innerHTML = "[JS] Please enter a valid date of birth";
