@@ -25,7 +25,6 @@ if (pos1 >= 0 && pos2 < 0 && pos3 < 0 && ! parseInt(name)) {
 document.getElementById('nameError').innerHTML = "";  
 return true;
 }
-<<<<<<< HEAD
   else if(name.length <= 2){
     document.getElementById("nameError").innerHTML = "[JS] You name is too short!";
     return false;
@@ -37,35 +36,11 @@ return true;
 }
  else {
          document.getElementById("nameError").innerHTML="[JS] Please enter your full name";
-=======
-return false;
-}
- function validateEmail(){
-   mailAddress = document.getElementById('email').value;
-         pos1 = mailAddress.indexOf("@");
-         pos2 = mailAddress.indexOf(".");
-        if (pos1 >= 0 && pos2 >= 0) {
-        document.getElementById('emailError').innerHTML=mailAddress + "";
-             return true;
-         }
-         else {
-            document.getElementById('emailError').innerHTML=mailAddress + "This is NOT a valid e-mail address!"; return false;
-         }
- }
-     function validateName() {
-         fullName= document.getElementsByName('name')[0].value;
-         if(fullName.length>2){
-       // fullName + "is a valid name!";
-          document.getElementById('nameError').innerHTML=fullName + " " + ""
-          return true;
-         }
-        else{
-         // fullName + "is not a valid name!";
-         document.getElementById('nameError').innerHTML=fullName + " " + "is not a valid name"
->>>>>>> refs/heads/form
          return false;
         }
        }
+
+
 
 function validateEmail(){
 email = document.getElementById("email").value;
@@ -79,7 +54,11 @@ email = document.getElementById("email").value;
   document.getElementById("emailError").innerHTML = "[JS] Please enter a valid e-mail address!";
   return false;
     }
-    
+}
+
+function validateAddress(){
+  address = document.getElementById("address").value;
+
   if (address == "") {
     document.getElementById("addressError").innerHTML = "[JS] Please enter a valid address!";
     return false;
@@ -150,20 +129,10 @@ if (gender === 0){
 else {
    document.getElementById("genderError").innerHTML ="";
   return true;
-
-
-
-
-
-function validateMovie(){
-movie = document.getElementById('movie').selectedIndex;
-if (movie === 0){
-  document.getElementById('movieError').innerHTML = "Please choose a movie!";
-  return false;
 }
-else {
-  document.getElementById('movieError').innerHTML = "Good Choice!";
-=======
+}
+
+
 function validateMovie(){
 movie = document.getElementById("movie").selectedIndex;
 if (movie === 0){
@@ -172,7 +141,6 @@ if (movie === 0){
 }
 else {
    document.getElementById("movieError").innerHTML ="";
->>>>>>> refs/remotes/origin/validation
   return true;
 }
 }
