@@ -26,16 +26,16 @@ document.getElementById('nameError').innerHTML = "";
 return true;
 }
   else if(name.length <= 2){
-    document.getElementById("nameError").innerHTML = "[JS] You name is too short!";
+    document.getElementById("nameError").innerHTML = "You name is too short!";
     return false;
 
   }
   else if(name.length >= 40){
-    document.getElementById("nameError").innerHTML = "[JS] You name is too long!";
+    document.getElementById("nameError").innerHTML = "You name is too long!";
     return false;
 }
  else {
-         document.getElementById("nameError").innerHTML="[JS] Please enter your full name";
+         document.getElementById("nameError").innerHTML="Please enter your full name";
          return false;
         }
        }
@@ -51,7 +51,7 @@ email = document.getElementById("email").value;
   return true;
   }
   else {
-  document.getElementById("emailError").innerHTML = "[JS] Please enter a valid e-mail address!";
+  document.getElementById("emailError").innerHTML = "Please enter a valid e-mail address!";
   return false;
     }
 }
@@ -60,13 +60,13 @@ function validateAddress(){
   address = document.getElementById("address").value;
 
   if (address == "") {
-    document.getElementById("addressError").innerHTML = "[JS] Please enter a valid address!";
+    document.getElementById("addressError").innerHTML = "Please enter a valid address!";
     return false;
   }else if(address.length <= 2){
-    document.getElementById("addressError").innerHTML = "[JS] You address is too short!";
+    document.getElementById("addressError").innerHTML = "You address is too short!";
     return false;
   }else if(address.length >= 200){
-    document.getElementById("addressError").innerHTML = "[JS] You address is too long!";
+    document.getElementById("addressError").innerHTML = "You address is too long!";
     return false;
   }
   else{
@@ -80,8 +80,8 @@ function validateDob(){
   var calculatedAge = getAge(dob);
   var age= document.getElementById("age").value;
   if (calculatedAge != age || parseInt(age) >= 150 || parseInt(age) < 0){
-    document.getElementById("ageError").innerHTML = "[JS] Please enter a valid age";
-    document.getElementById("dobError").innerHTML = "[JS] Please enter a valid date of birth";
+    document.getElementById("ageError").innerHTML = "Please enter a valid age";
+    document.getElementById("dobError").innerHTML = "Please enter a valid date of birth";
     return false;
   }
   else{
@@ -105,7 +105,7 @@ function getAge(dob) {
 function validateAge(){
    age= document.getElementById("age").value;
    if(age ==""){
-   document.getElementById("ageError").innerHTML="[JS] Please enter your age";
+   document.getElementById("ageError").innerHTML="Please enter your age";
    return false;
  }
   else{
@@ -123,7 +123,7 @@ function calculateAge() {
   function validateGender() {
 gender = document.getElementById("gender").selectedIndex;
 if (gender === 0){
-  document.getElementById("genderError").innerHTML = "[JS] Please select your gender!";
+  document.getElementById("genderError").innerHTML = "Please select your gender!";
   return false;
 }
 else {
@@ -136,7 +136,7 @@ else {
 function validateMovie(){
 movie = document.getElementById("movie").selectedIndex;
 if (movie === 0){
-  document.getElementById("movieError").innerHTML = "[JS] Please choose a movie!";
+  document.getElementById("movieError").innerHTML = "Please choose a movie!";
   return false;
 }
 else {

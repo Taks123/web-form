@@ -11,6 +11,7 @@ $address = $_POST['address'];
 $dob = $_POST['dob'];
 $age = $_POST['age'];
 $movie = $_POST['movie'];
+
 $gender = !empty($_POST['gender']) ? $_POST['gender'] : '';
 $errors['name'] = validateName($name);
 $errors['email'] = validateEmail($email);
@@ -19,6 +20,16 @@ $errors['dob'] = validateDob($dob);
 $errors['age'] = validateAge($age);
 $errors['movie'] = validateMovie($movie);
 $errors['gender'] = validateGender($gender);
+
+if(!$errors['name'] && !$errors['address'] && !$errors['email'] && !$errors['dob'] && !$errors['gender'] && !$errors['movie'] &&!$errors['age']){
+	$formcontent=" From: $name \n Email \n $email \n Message: $address";
+	$recipient = "takara.taz@gmail.com";
+	$subject= "Web-Form";
+	$mailheader= "From: $email \r\n";
+	mail ($recipient, $subject, $formcontent) or die ("error");
+	require 'partials/thanks.php';
+	die();
+}
 }
 require 'partials/header.php';
 require 'partials/form.php';

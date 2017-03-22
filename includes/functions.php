@@ -108,6 +108,7 @@ function validateMovie($movie) {
     return "Please select a movie";
   }
 }
+
 function dd($data)
 {
 die(var_dump($data));
@@ -116,41 +117,4 @@ function escape($value)
 {
  return e($value);
 }
-
-    if($dateArray && count($dateArray) === 3 && (int)$dateArray[0] > 0 && (int)$dateArray[1] > 0 && (int)$dateArray[2] > 0) {
-        if (checkdate($dateArray[1], $dateArray[2], $dateArray[0])) {
-            return true;
-        } else if (checkdate($dateArray[1], $dateArray[0], $dateArray[2])) {
-            return true;
-        }
-        return false;
-    }
-
-    return false;
-
-function validateGender($gender) {
-  if($gender == 'select gender') {
-    return "Please select your gender ";
-  }
-}
-function validateMovie($movie) {
-  if($movie == 'movie1') {
-    return "Please select a movie";
-  }
-}
-
-
-function dd($data)
-{
-die(var_dump($data));
-}
-
-
-
-function escape($value)
-{
- return e($value);
-}
-
-
 
