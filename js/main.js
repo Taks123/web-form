@@ -25,15 +25,11 @@ if (pos1 >= 0 && pos2 < 0 && pos3 < 0 && ! parseInt(name)) {
 document.getElementById('nameError').innerHTML = "";
 return true;
 }
-  else if(name.length <= 2){
-    document.getElementById("nameError").innerHTML = "You name is too short!";
+  else if(name.length >= 40){
+    document.getElementById("nameError").innerHTML = "Your name is too long!";
     return false;
 
   }
-  else if(name.length >= 40){
-    document.getElementById("nameError").innerHTML = "You name is too long!";
-    return false;
-}
  else {
          document.getElementById("nameError").innerHTML="Please enter your full name";
          return false;

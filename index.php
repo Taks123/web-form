@@ -22,8 +22,8 @@ $errors['movie'] = validateMovie($movie);
 $errors['gender'] = validateGender($gender);
 
 if(!$errors['name'] && !$errors['address'] && !$errors['email'] && !$errors['dob'] && !$errors['gender'] && !$errors['movie'] &&!$errors['age']){
-	$formcontent=" From: $name \n Email \n $email \n Message: $address";
-	$recipient = "takara.taz@gmail.com";
+	$formcontent=" From: $name \n Email: $email \n Message: $address";
+	$recipient = "Daniel.Urlwin@visioncollege.ac.nz";
 	$subject= "Web-Form";
 	$mailheader= "From: $email \r\n";
 	mail ($recipient, $subject, $formcontent, $mailheader) or die ("error");
@@ -35,8 +35,5 @@ require 'partials/header.php';
 require 'partials/form.php';
 require 'partials/footer.php';
 ?>
-
-
-
 
 

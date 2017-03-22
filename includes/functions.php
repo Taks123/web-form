@@ -20,7 +20,7 @@ function validateEmail($email) {
   }
 
   else if(strlen($email) > 100) {
-    return "Email address too long. ";
+    return "Email address too long.";
   }
   return false;
 }
@@ -40,6 +40,12 @@ function validateAddress($address) {
 function validateAge($age) {
   if(empty($age)) {
     return "Age is required";
+  }
+  if ((int)$age > 150){
+     return "Sorry you cannot be over 150 years old";
+  }
+  else if ((int)$age < 0){
+     return "Sorry you must be older";
   }
 }
 function validateDob($dob) {
