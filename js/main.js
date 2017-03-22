@@ -3,7 +3,7 @@ function validate() {
  var nameError = validateName();
   var emailError = validateEmail();
   var addressError = validateAddress();
-  var ageError = getAge();
+  var ageError = validateAge();
   var dobError = validateDob();
   var genderError = validateGender();
   var movieError = validateMovie();
@@ -133,6 +133,7 @@ else {
 }
 
 
+
 function validateMovie(){
 movie = document.getElementById("movie").selectedIndex;
 if (movie === 0){
@@ -143,4 +144,36 @@ else {
    document.getElementById("movieError").innerHTML ="";
   return true;
 }
+}
+
+function clearForm(){
+document.getElementById("form").reset();
+clearName()
+clearEmail()
+clearAddress()
+clearDob()
+clearAge()
+clearGender()
+clearMovie()
+}
+function clearName(){
+  document.getElementById("nameError").innerHTML="";
+}
+function clearEmail(){
+  document.getElementById("emailError").innerHTML="";
+}
+function clearAddress(){
+  document.getElementById("addressError").innerHTML="";
+}
+function clearDob(){
+  document.getElementById("dobError").innerHTML="";
+}
+function clearAge(){
+  document.getElementById("ageError").innerHTML="";
+}
+function clearGender(){
+  document.getElementById("genderError").innerHTML="";
+}
+function clearMovie(){
+  document.getElementById("movieError").innerHTML="";
 }

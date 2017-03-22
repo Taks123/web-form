@@ -115,7 +115,6 @@ function validateMovie($movie) {
     return "Please select a movie";
   }
 }
-
 function dd($data)
 {
 die(var_dump($data));
