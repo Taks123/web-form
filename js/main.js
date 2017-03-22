@@ -22,7 +22,7 @@ name = document.getElementById('name').value;
  pos2 = name.indexOf("@");
  pos3 = name.indexOf(".");
 if (pos1 >= 0 && pos2 < 0 && pos3 < 0 && ! parseInt(name)) {
-document.getElementById('nameError').innerHTML = "";  
+document.getElementById('nameError').innerHTML = "";
 return true;
 }
   else if(name.length <= 2){

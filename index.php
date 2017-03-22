@@ -26,7 +26,7 @@ if(!$errors['name'] && !$errors['address'] && !$errors['email'] && !$errors['dob
 	$recipient = "takara.taz@gmail.com";
 	$subject= "Web-Form";
 	$mailheader= "From: $email \r\n";
-	mail ($recipient, $subject, $formcontent) or die ("error");
+	mail ($recipient, $subject, $formcontent, $mailheader) or die ("error");
 	require 'partials/thanks.php';
 	die();
 }

@@ -5,7 +5,7 @@ function validateName($name) {
     return "Full Name is required";
   }
   if (strlen($name) > 40|| !preg_match("/\s/", $name)) {
-   return "Please enter full name";
+   return "Please enter a full name under 40 characters";
   }
 if (!preg_match("/^[a-zA-Z\. ]*$/", $name)) {
     return "How do you pronounce that! Please enter a valid name.";
@@ -16,14 +16,15 @@ if (!preg_match("/^[a-zA-Z\. ]*$/", $name)) {
 }
 function validateEmail($email) {
   if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
-    return "Email is required";
+    return "Please enter a valid email address";
   }
-  if ( strlen($email) > 100 || !preg_match("/\s/", $name)) {
-return "Email address too long.";
+
+  else if(strlen($email) > 100) {
+    return "Email address too long. ";
+  }
+  return false;
 }
- else { return false;
- }
-}
+
 
 function validateAddress($address) {
   if(empty($address)) {
