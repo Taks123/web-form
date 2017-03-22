@@ -8,68 +8,79 @@ function validate() {
   var genderError = validateGender();
   var movieError = validateMovie();
 
-  if (!nameError && !emailError && !addressError &&  !ageError && !dobError && !genderError && !movieError)
-  {
-  return false;
-}
-  return true;
-}
+if (nameError && emailError && addressError &&  ageError && dobError && genderError && movieError)
+    {
+    return true;
+  }
+    return false;
+  }
+
 
   function validateName() {
-         name= document.getElementsByName('name')[0].value;
-         if(name.length>2){
-       // fullName + "is a valid name!";
-          document.getElementById('nameError').innerHTML=name + " " + " " ;
-          return true;
-         }
-        else{
-         // fullName + "is not a valid name!";
-         document.getElementById('nameError').innerHTML=name + " " + "Please enter your name";
+name = document.getElementById('name').value;
+ pos1 = name.indexOf(" ");
+ pos2 = name.indexOf("@");
+ pos3 = name.indexOf(".");
+if (pos1 >= 0 && pos2 < 0 && pos3 < 0 && ! parseInt(name)) {
+document.getElementById('nameError').innerHTML = "";  
+return true;
+}
+  else if(name.length <= 2){
+    document.getElementById("nameError").innerHTML = "[JS] You name is too short!";
+    return false;
+
+  }
+  else if(name.length >= 40){
+    document.getElementById("nameError").innerHTML = "[JS] You name is too long!";
+    return false;
+}
+ else {
+         document.getElementById("nameError").innerHTML="[JS] Please enter your full name";
          return false;
         }
        }
 
 function validateEmail(){
-mailAddress = document.getElementById('email').value;
- pos1 = mailAddress.indexOf("@");
- pos2 = mailAddress.indexOf(".");
-  if (pos1 >= 0 && pos2 >= 0) {
-  document.getElementById('emailError').innerHTML = mailAddress + " ";
+email = document.getElementById("email").value;
+ pos1 = email.indexOf("@");
+ pos2 = email.indexOf(".");
+  if (pos1 >= 0 && pos2 >= 0 && email.length <= 100) {
+    document.getElementById("emailError").innerHTML = "";
   return true;
   }
   else {
-  document.getElementById('emailError').innerHTML = mailAddress + "Please enter a valid e-mail address!";
+  document.getElementById("emailError").innerHTML = "[JS] Please enter a valid e-mail address!";
   return false;
     }
-}
-
-function validateAddress(){
-  address = document.getElementById('address').value;
-  pos1 = address.indexOf(' ');
-
-  if (pos1 >= 0 && address.length < 200) {
-
-    document.getElementById('addressError').innerHTML = "";
-    return true;
-  }
-  else
-  {
-    document.getElementById('addressError').innerHTML = address + "Please enter a valid address!";
+    
+  if (address == "") {
+    document.getElementById("addressError").innerHTML = "[JS] Please enter a valid address!";
     return false;
+  }else if(address.length <= 2){
+    document.getElementById("addressError").innerHTML = "[JS] You address is too short!";
+    return false;
+  }else if(address.length >= 200){
+    document.getElementById("addressError").innerHTML = "[JS] You address is too long!";
+    return false;
+  }
+  else{
+    document.getElementById("addressError").innerHTML = "";
+    return true;
   }
 }
 
 function validateDob(){
-  var dob = document.getElementById('dob');
-  var calculatedAge = getAge(dob.value);
-  document.getElementById('age').value;
-  if (calculatedAge != dob || parseInt(dob) >= 150 || parseInt(dob) < 0){
-    document.getElementById("ageError").innerHTML = "Please enter a valid age";
+  var dob = document.getElementById("dob").value;
+  var calculatedAge = getAge(dob);
+  var age= document.getElementById("age").value;
+  if (calculatedAge != age || parseInt(age) >= 150 || parseInt(age) < 0){
+    document.getElementById("ageError").innerHTML = "[JS] Please enter a valid age";
+    document.getElementById("dobError").innerHTML = "[JS] Please enter a valid date of birth";
     return false;
   }
-  else
-  {
+  else{
     document.getElementById("ageError").innerHTML = "";
+    document.getElementById("dobError").innerHTML = "";
     return true;
   }
 }
@@ -85,37 +96,34 @@ function getAge(dob) {
   }
   return age;
 }
-
+function validateAge(){
+   age= document.getElementById("age").value;
+   if(age ==""){
+   document.getElementById("ageError").innerHTML="[JS] Please enter your age";
+   return false;
+ }
+  else{
+   document.getElementById("ageError").innerHTML= "";
+    return true;
+  }
+}
 
 function calculateAge() {
-   var dob = document.getElementById('dob');
+   var dob = document.getElementById("dob");
   var calculatedAge = getAge(dob.value);
-  document.getElementById('age').value = calculatedAge;
+  document.getElementById("age").value = calculatedAge;
 }
 
-function validateGender() {
-  // var radios = document.getElementsByName("gender");
-  // var formValid = false;
-  // document.getElementById('genderError').innerHTML = '';
-
-  // var i = 0;
-  // while (!formValid && i < radios.length) {
-  //   if (radios[i].checked) formValid = true;
-  //   i++;
-  // }
-
-  // if (!formValid) document.getElementById("genderError").innerHTML = 'Please choose an answer!';
-  // return formValid;
+  function validateGender() {
+gender = document.getElementById("gender").selectedIndex;
+if (gender === 0){
+  document.getElementById("genderError").innerHTML = "[JS] Please select your gender!";
+  return false;
 }
+else {
+   document.getElementById("genderError").innerHTML ="";
+  return true;
 
-    if(document.getElementById('gender_Male').checked) {
-
-}
-else if(document.getElementById('gender_Female').checked) {
-
-}
- return ($('input[type=radio]:checked').size() > 0);
-    }
 
 
 
@@ -128,6 +136,16 @@ if (movie === 0){
 }
 else {
   document.getElementById('movieError').innerHTML = "Good Choice!";
+=======
+function validateMovie(){
+movie = document.getElementById("movie").selectedIndex;
+if (movie === 0){
+  document.getElementById("movieError").innerHTML = "[JS] Please choose a movie!";
+  return false;
+}
+else {
+   document.getElementById("movieError").innerHTML ="";
+>>>>>>> refs/remotes/origin/validation
   return true;
 }
 }
