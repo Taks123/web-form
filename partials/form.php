@@ -1,6 +1,6 @@
-<div id="form">
+<div id="frm">
 <h1> Web Form </h1>
-<form action="index.php" method="POST" onsubmit="return validate()">
+<form id="form" action="index.php" method="POST" onsubmit="return validate()">
 </br>
   <label for="name"> Full Name:</label>
   <input id="name" name="name" type="text" placeholder="Full Name" value="<?= !empty($name) ? $name : ''?>">
@@ -18,7 +18,7 @@
   </br>
 
   <label for="dob">Date of Birth:</label>
-  <input id="dob" name="dob" type="date" onchange="calculateAge(dob)" value="<?= !empty($dob) ? $dob : '' ?>">
+  <input id="dob" name="dob" type="date" onchange="calculateAge()" value="<?= !empty($dob) ? $dob : '' ?>">
 <div id="dobError" class="error"><?= !empty($errors['dob']) ? $errors['dob'] : '' ?> </div>
 </br>
 
@@ -47,7 +47,7 @@
 
 
 <div id="buttons"> <button id="submitForm" class="btn btn-success" type="submit"> Submit </button>
-<button id="clearForm" class="btn btn-warning" type="reset" value="reset">Clear </button> </div>
+<button id="clearAll" class="btn btn-warning" type="reset" value="reset" onclick="clearForm()">Clear </button> </div>
 <br>
 <p> © Copyright Takara Rodrigues 2017 </p> </div>
 </form>
