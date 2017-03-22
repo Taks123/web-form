@@ -1,5 +1,5 @@
 <?php
-<<<<<<< HEAD
+
 //ALL your functions will go inside here
 function validateName($name) {
   if (empty($name)) {
@@ -10,16 +10,7 @@ function validateName($name) {
   }
 if (!preg_match("/^[a-zA-Z\. ]*$/", $name)) {
     return "How do you pronounce that! Please enter a valid name.";
-=======
-// All you functions will go inside this file
-function validateName($name) {
-  if (empty($name)) {
-    return "Name is required";
-  }
-  if (strlen($name) > 40 || !preg_match("/\s/", $name)) {
-    return "Please enter full name";
->>>>>>> refs/heads/form
-  }
+}
   else {
     return false;
   }
@@ -36,33 +27,18 @@ function validateAddress($address) {
     return "An address is required";
   }
   if (strlen($address) > 200 || !preg_match("/\s/", $address)) {
-<<<<<<< HEAD
     return "Address too long";
-=======
-    return "Please enter full name";
->>>>>>> refs/heads/form
   }
   else {
     return false;
   }
-<<<<<<< HEAD
 }
 
-function validateAge($age) {
-  if(empty($age)) {
-    return "Age is required";
-  }
-=======
-}
-function validatedateofbirth ($dateofbirth){
-if(empty($dateofbirth)){
-  return "Date of Birth is required";
-}
+
 }
 function validateAge ($age){
 if(empty($age)){
   return "Age is required";
->>>>>>> refs/heads/form
 }
 
 function validateDob($dob) {
@@ -114,7 +90,6 @@ function validateDob($dob) {
 
     return false;
 }
-<<<<<<< HEAD
 
 function checkDateManually($dob) {
     $dateArray = [];
@@ -140,29 +115,16 @@ function checkDateManually($dob) {
     }
 
     return false;
-=======
-function validateGender ($gender){
-if(empty($gender)){
-  return "Gender is required";
->>>>>>> refs/heads/form
-}
 
 function validateGender($gender) {
   if($gender == 'select gender') {
     return "Please select your gender ";
   }
 }
-<<<<<<< HEAD
-
 function validateMovie($movie) {
   if($movie == 'movie1') {
     return "Please select a movie";
   }
-=======
-function validateMovie ($movie){
-if(empty($movie)){
-  return "Favourite movie is required";
->>>>>>> refs/heads/form
 }
 
 
